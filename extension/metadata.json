@@ -1,0 +1,11 @@
+{
+  "uuid": "game-launcher@eltobsjr.gmail.com",
+  "name": "Game Launcher (Emuladores)",
+  "description": "Indicador na barra superior para os emuladores Nintendo (RetroArch, Dolphin, melonDS, Azahar, Cemu, Ryujinx). Passe o mouse sobre um emulador para ver e abrir seus jogos direto, e receba um aviso amigável a cada login perguntando se quer jogar.",
+  "version": 1,
+  "version-name": "1.0.0",
+  "shell-version": ["46", "47", "48", "49", "50"],
+  "url": "https://github.com/eltobsjr/game-launcher-indicator",
+  "settings-schema": "org.gnome.shell.extensions.game-launcher",
+  "gettext-domain": "game-launcher"
+}

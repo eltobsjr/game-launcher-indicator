@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <enum id="org.gnome.shell.extensions.game-launcher.panel-position">
+    <value nick="right"      value="0"/>
+    <value nick="left"       value="1"/>
+    <value nick="left-edge"  value="2"/>
+  </enum>
+
+  <schema id="org.gnome.shell.extensions.game-launcher"
+          path="/org/gnome/shell/extensions/game-launcher/">
+
+    <key name="panel-position" enum="org.gnome.shell.extensions.game-launcher.panel-position">
+      <default>'right'</default>
+      <summary>Posição do indicador na barra superior</summary>
+    </key>
+
+    <key name="show-login-notification" type="b">
+      <default>true</default>
+      <summary>Perguntar a cada login se quer abrir um emulador</summary>
+    </key>
+
+    <key name="notification-delay" type="i">
+      <default>4</default>
+      <range min="0" max="60"/>
+      <summary>Atraso (segundos) antes de mostrar o aviso de login</summary>
+    </key>
+
+    <key name="show-mascot-icon" type="b">
+      <default>false</default>
+      <summary>Usa o mascote no lugar do ícone de controle na barra superior</summary>
+    </key>
+
+    <key name="mascot-animated" type="b">
+      <default>false</default>
+      <summary>Ícone do painel mostra o mascote girando em loop, em vez de uma pose parada</summary>
+    </key>
+
+    <key name="max-games-per-app" type="i">
+      <default>25</default>
+      <range min="5" max="200"/>
+      <summary>Máximo de jogos listados por emulador</summary>
+    </key>
+
+    <key name="roms-base-dirs" type="as">
+      <default>[]</default>
+      <summary>Pastas base dos emuladores (vazio = ~/games/Emuladores)</summary>
+    </key>
+
+    <key name="enabled-retroarch" type="b">
+      <default>true</default>
+      <summary>Mostrar RetroArch no menu</summary>
+    </key>
+
+    <key name="enabled-dolphin" type="b">
+      <default>true</default>
+      <summary>Mostrar Dolphin no menu</summary>
+    </key>
+
+    <key name="enabled-melonds" type="b">
+      <default>true</default>
+      <summary>Mostrar melonDS no menu</summary>
+    </key>
+
+    <key name="enabled-azahar" type="b">
+      <default>true</default>
+      <summary>Mostrar Azahar no menu</summary>
+    </key>
+
+    <key name="enabled-cemu" type="b">
+      <default>true</default>
+      <summary>Mostrar Cemu no menu</summary>
+    </key>
+
+    <key name="enabled-ryujinx" type="b">
+      <default>true</default>
+      <summary>Mostrar Ryujinx no menu</summary>
+    </key>
+
+  </schema>
+</schemalist>
