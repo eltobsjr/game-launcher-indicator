@@ -1,0 +1,14 @@
+{"title":"Game Launcher","schema":"org.gnome.shell.extensions.game-launcher","settings":[
+ {"section":"Barra superior","key":"panel-position","type":"enum","label":"Posição do ícone","choices":[["right","Direita (padrão)"],["left","Esquerda"],["left-edge","Extrema esquerda"]]},
+ {"key":"show-mascot-icon","type":"bool","label":"Mostrar o mascote no lugar do ícone"},
+ {"key":"mascot-animated","type":"bool","label":"Animar o mascote"},
+ {"section":"Emuladores","key":"enabled-retroarch","type":"bool","label":"RetroArch"},
+ {"key":"enabled-dolphin","type":"bool","label":"Dolphin (GameCube/Wii)"},
+ {"key":"enabled-melonds","type":"bool","label":"melonDS (Nintendo DS)"},
+ {"key":"enabled-azahar","type":"bool","label":"Azahar (3DS)"},
+ {"key":"enabled-cemu","type":"bool","label":"Cemu (Wii U)"},
+ {"key":"enabled-ryujinx","type":"bool","label":"Ryujinx (Switch)"},
+ {"section":"Jogos","key":"max-games-per-app","type":"int","label":"Jogos listados por emulador","min":5,"max":200},
+ {"key":"roms-base-dirs","type":"strv","label":"Pastas de ROMs extras"},
+ {"section":"Avisos","key":"show-login-notification","type":"bool","label":"Avisar ao entrar na sessão"}
+]}

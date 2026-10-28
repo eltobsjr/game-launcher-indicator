@@ -157,51 +157,6 @@ function isFlatpakInstalled(flatpakId) {
     return flatpakAppInfo(flatpakId) !== null;
 }
 
-const ACCENT_COLORS = {
-    blue: '#3584e4', teal: '#2190a4', green: '#3a944a', yellow: '#c88800',
-    orange: '#ed5b00', red: '#e62d42', pink: '#d56199', purple: '#9141ac',
-    slate: '#6f8396',
-};
-
-// Criado uma única vez: o menu é reconstruído a cada abertura e criar um
-// Gio.Settings por vez vazaria um objeto a cada clique.
-let _interfaceSettings;
-let _interfaceSettingsChecked = false;
-
-function accentColorSettings() {
-    if (_interfaceSettingsChecked)
-        return _interfaceSettings;
-    _interfaceSettingsChecked = true;
-    try {
-        const source = Gio.SettingsSchemaSource.get_default();
-        const schema = source?.lookup('org.gnome.desktop.interface', true);
-        // 'accent-color' só existe no GNOME 47+.
-        if (schema?.has_key('accent-color'))
-            _interfaceSettings = new Gio.Settings({settings_schema: schema});
-    } catch (e) {
-        _interfaceSettings = null;
-    }
-    return _interfaceSettings;
-}
-
-function accentColorHex() {
-    try {
-        const settings = accentColorSettings();
-        if (!settings)
-            return ACCENT_COLORS.blue;
-        return ACCENT_COLORS[settings.get_string('accent-color')] || ACCENT_COLORS.blue;
-    } catch (e) {
-        return ACCENT_COLORS.blue;
-    }
-}
-
-// Nada pode sobreviver ao disable(): o cache acima é derrubado ali.
-function resetAccentColorCache() {
-    _interfaceSettings?.run_dispose();
-    _interfaceSettings = null;
-    _interfaceSettingsChecked = false;
-}
-
 const SCAN_CACHE_TTL_MS = 10000;
 
 const MASCOT_FRAME_MS = 130;
@@ -476,9 +431,8 @@ class Indicator extends PanelMenu.Button {
         const titleRow = new St.BoxLayout({style_class: 'gl-title-row'});
         const glyph = new St.Icon({
             icon_name: 'input-gaming-symbolic', icon_size: 14,
-            style_class: 'gl-header-icon',
+            style_class: 'gl-header-icon gl-accent',
         });
-        glyph.set_style(`color: ${accentColorHex()};`);
         const label = new St.Label({
             text: _('Emuladores Nintendo'), y_align: Clutter.ActorAlign.CENTER,
             style_class: 'gl-header-title',
@@ -743,6 +697,5 @@ export default class GameLauncherExtension extends Extension {
         this._indicator?.destroy();
         this._indicator = null;
         this._settings = null;
-        resetAccentColorCache();
     }
 }

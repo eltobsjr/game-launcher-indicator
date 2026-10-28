@@ -97,6 +97,19 @@ logar de novo:
 gnome-extensions enable game-launcher@eltobsjr.gmail.com
 ```
 
+### Tema e opções (escolhidos na instalação)
+
+O `./install.sh` pergunta no terminal, antes de copiar qualquer coisa:
+
+- **Paleta**: Catppuccin Macchiato (padrão), Frappé ou Mocha, com uma prévia em cores.
+- **Cor de destaque**: 12 opções, ou **seguir o destaque do GNOME** (47+).
+- **Opções da extensão**: posição, mascote, emuladores ativos, pastas de ROMs e avisos.
+
+Nenhuma cor fica escrita no código: o `stylesheet.css` é gerado na instalação a partir da paleta que você escolheu.
+Para refazer as escolhas, rode `./install.sh --reconfigure`. Sem terminal (CI, `curl | bash`) ou com `--yes`,
+vale o que já estava salvo ou o padrão. Também aceita `--palette macchiato|frappe|mocha`, `--accent blue|mauve|…` e `--system-accent`.
+Detalhes do padrão visual em [`docs/DESIGN.md`](docs/DESIGN.md).
+
 ## Preferências
 
 - **Geral**: posição na barra, ícone do mascote (liga/desliga + animado),

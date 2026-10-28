@@ -8,3 +8,6 @@ extension/schemas/gschemas.compiled
 # cópia de trabalho dos assets do mascote (gerados via PixelLab) — o que a
 # extensão usa de verdade está em extension/assets/; docs/ tem os previews
 /assets/
+extension/stylesheet.css
+CLAUDE.md
+memory/

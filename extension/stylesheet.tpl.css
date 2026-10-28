@@ -1,0 +1,22 @@
+.gl-panel-icon { icon-size: 22px; }
+.gl-status-label { font-size: 0.82em; color: {{subtext0}}; margin-left: 6px; max-width: 220px; }
+
+.gl-accent { color: {{accent}}; }
+.gl-header { padding-top: 8px; padding-bottom: 8px; }
+.gl-header-box { spacing: 10px; }
+.gl-mascot-icon { icon-size: 34px; }
+.gl-title-box { spacing: 2px; }
+.gl-title-row { spacing: 6px; }
+.gl-header-icon { icon-size: 14px; }
+
+/* Precisa ser específico para o título: ".gl-header StLabel" também pegaria o
+   subtítulo do mascote e ele sairia em negrito e grande. */
+.gl-header-title { font-weight: 800; font-size: 1.1em; color: {{text}}; }
+.gl-mascot-subtitle { font-size: 0.8em; color: {{subtext0}}; }
+
+.gl-app-icon { icon-size: 20px; }
+.gl-game-box { spacing: 8px; }
+.gl-game-icon { icon-size: 13px; color: {{overlay1}}; }
+.gl-game-item:hover .gl-game-icon { color: {{accent}}; }
+.gl-empty StLabel { font-style: italic; color: {{overlay1}}; }
+.gl-not-installed StLabel { color: {{overlay1}}; }
