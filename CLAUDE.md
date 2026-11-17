@@ -4,11 +4,11 @@
 
 Ao iniciar qualquer conversa neste projeto:
 
-1. Leia o índice de memória: `~/.claude/projects/-home-eltobsjr-dev-game-launcher-indicator/memory/MEMORY.md`
+1. Leia o índice de memória: `~/.claude/projects/-home-eltobsjr-dev-linux-game-launcher-indicator/memory/MEMORY.md`
    É um índice — siga os links para os arquivos relevantes à tarefa atual.
 
 2. Leia o devtrack mais recente:
-   `ls /home/eltobsjr/dev/game-launcher-indicator/GameLauncherSecondBrain/devtrack/ | sort | tail -1`
+   `ls /home/eltobsjr/dev/linux/game-launcher-indicator/GameLauncherSecondBrain/devtrack/ | sort | tail -1`
    e leia o arquivo retornado. Isso garante continuidade: o que foi feito,
    decisões tomadas e pendências abertas na última sessão.
 
